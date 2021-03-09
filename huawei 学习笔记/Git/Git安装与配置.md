@@ -75,23 +75,22 @@ TortoiseGit提供了Git和Windows资源管理器的整合，提供了Git的图�
 Git有三种配置，分别以文件的形式存放在三个不同的地方。可以在命令行中使用git config工具查看这些变量。
 >注：每一个级别的配置都会覆盖上层的相同配置，例如 .git/config 里的配置会覆盖 %Git%/etc/gitconfig 中的同名变量。
 1. 系统配置（对所有用户都适用）：
-
- 存放在git的安装目录下：`%Git%/etc/gitconfig`；若使用`git config`时用`--system`选项，读写的就是这个文件：
-  ```shell
-  git config --system core.autocrlf
-  ```
+	
+	存放在git的安装目录下：`%Git%/etc/gitconfig`；若使用`git config`时用`--system`选项，读写的就是这个文件：
+	```shell
+	git config --system core.autocrlf
+	```
 2. 用户配置（只适用于该用户）：
 
- 存放在用户目录下。例如linux存放在：`~/.gitconfig`；若使用`git config`时用 `--global`选项，读写的就是这个文件：
-  ```shell
-  git config --global user.name
-  ```
+	存放在用户目录下。例如linux存放在：`~/.gitconfig`；若使用`git config`时用 `--global`选项，读写的就是这个文件：
+	```shell
+	git config --global user.name
+	```
 3. 仓库配置（只对当前项目有效）：
- 
- 当前仓库的配置文件（也就是工作目录中的`.git/config`文件）；若使用`git config`时用`--local`选项，读写的就是这个文件：
-  ```shell
-  git config --local remote.origin.url
-  ```
+	当前仓库的配置文件（也就是工作目录中的`.git/config`文件）；若使用`git config`时用`--local`选项，读写的就是这个文件：
+	```shell
+	git config --local remote.origin.url
+	```
 #### 配置个人身份
 ```shell
 git config --global user.name “Your Name”
@@ -132,14 +131,14 @@ git config --global core.quotepath false
 #### 与服务器的认证配置
 两种常见的认证方式：
 - HTTP/HTTPS协议认证：
-设置口令缓存（用于HTTP方式，使Git记住上一次认证成功的结果）：
-```shell
-git config --global credential.helper store
-```
-添加https证书信任（用于HTTPS方式，让服务端公钥自动成为一个可信结果）：
-```shell
-git config http.sslverify false
-```
+	设置口令缓存（用于HTTP方式，使Git记住上一次认证成功的结果）：
+	```shell
+	git config --global credential.helper store
+	```
+	添加https证书信任（用于HTTPS方式，让服务端公钥自动成为一个可信结果）：
+	```shell
+	git config http.sslverify false
+	```
 - SSH协议认证（推荐）：
 SSH协议是一种非常常用的Git仓库访问协议，使用公钥认证、无需输入密码，加密传输，操作便利又保证安全
 >SSH认证的配置过程：
